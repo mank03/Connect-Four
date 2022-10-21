@@ -33,7 +33,7 @@ public class Board {
     private static String[][] board = new String[BOARD_HEIGHT][BOARD_WIDTH];
     // public static int v = 0;           
     private int user;
-    private int r;
+    private static int r;
     
     public int getWidth() {
         return board[0].length;
@@ -167,7 +167,7 @@ public class Board {
 
   
     public boolean checkHorizontal(final String red, int i) {
-        final int horizontalPatterns = getWidth() - WINNING_PATTERN_LENGTH + 1;
+        int horizontalPatterns = getWidth() - WINNING_PATTERN_LENGTH + 1;
 
         for (int startY = 0; startY < getHeight(); ++startY) {
             next_pattern:
@@ -190,7 +190,7 @@ public class Board {
     }
 
     public boolean checkVertical(final String red, int i) {
-        final int verticalPatterns = getHeight() - WINNING_PATTERN_LENGTH + 1;
+        int verticalPatterns = getHeight() - WINNING_PATTERN_LENGTH + 1;
 
         for (int startX = 0; startX < getWidth(); ++startX) {
             next_pattern:
@@ -213,8 +213,8 @@ public class Board {
     }
 
     public boolean checkDiagonal(final String red, int i) {
-        final int verticalPatterns = getHeight() - WINNING_PATTERN_LENGTH + 1;
-        final int horizontalPatterns = getWidth() - WINNING_PATTERN_LENGTH + 1;
+        int verticalPatterns = getHeight() - WINNING_PATTERN_LENGTH + 1;
+        int horizontalPatterns = getWidth() - WINNING_PATTERN_LENGTH + 1;
 
         for (int startY = 0; startY < verticalPatterns; ++startY) {
             next_pattern:
@@ -320,10 +320,9 @@ public void writeData(final String currentPlayer) throws FileNotFoundException{
     writer.close();
 }
 
-public void readFile() throws IOException {
+public static void readFile() throws IOException {
     String file = "assets/test4.csv";
     ArrayList<String[]> lines = new ArrayList<String[]>();
-    String[][] array = new String[lines.size()][0];
     String line = null;
 
     try(BufferedReader bufferedReader = new BufferedReader(new FileReader(file))) {
@@ -336,6 +335,8 @@ public void readFile() throws IOException {
     }catch (IOException e) {
         e.printStackTrace();
     }
+
+    String[][] array = new String[lines.size()][0];
     lines.toArray(array);
 
     for (int i = 0; i < array.length-2; i++) { //this equals to the row in our matrix.
@@ -355,7 +356,7 @@ public void readFile() throws IOException {
     r = 1;
 }
 
-public int getReadFile(){
+public static int getReadFile(){
     return r;
 }
 

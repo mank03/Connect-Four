@@ -7,12 +7,12 @@ import java.util.Scanner;
 /**
  * This class ties all the components into a command line Connect Four game.
  * 
- * @author Rodion "rodde" Efremov
+ * @author Manu Konnur
  * @version 1.6 (Jun 28, 2016)
  */
 public class TextUI {
 
-    // private static final String NEW_GAME_REQUEST = "Play again? Type \"no\" to exit, or anything " + "else to replay.";
+    // private static final String NEW_GAME_REQUEST = "Play again? Type \"no\" to exit, or anything ");
 
     private static final String EXIT_MESSAGE = "Bye!";
 
