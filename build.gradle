@@ -12,9 +12,9 @@ repositories {
 
 }
 
-dependencies {
-    testImplementation('junit:junit:4.13')
-}
+// dependencies {
+//     testImplementation('junit:junit:4.13')
+// }
 
 task run;
 run.doFirst {
