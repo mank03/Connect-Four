@@ -60,9 +60,8 @@ public class BoardTest{
         String line = null;
         final StringBuilder sb = new StringBuilder();
         objectToTest = new Board();
-        // objectToTest.readFile("assets/test3.csv");
 
-        try(BufferedReader bufferedReader = new BufferedReader(new FileReader("assets/test3.csv"))) {
+        try(BufferedReader bufferedReader = new BufferedReader(new FileReader("assets/SampleTest1.csv"))) {
             int i = 0;
             while(((line = bufferedReader.readLine()) != null) && i<27) {
                 lines.add(line.split(","));
@@ -132,7 +131,7 @@ public class BoardTest{
     public void testToStringLoadedBoard() throws IOException{
         setUpLoadedBoard();
         objectToTest = new Board();
-        objectToTest.readFile("assets/test3.csv");
+        objectToTest.readFile("assets/SampleTest1.csv");
         String returnString = objectToTest.toString();
         assertEquals(setUpLoadedBoard(), returnString);
     }

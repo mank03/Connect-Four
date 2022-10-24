@@ -39,6 +39,28 @@ public class ConnectFour {
     return q;
   }
 
+  public void setReportOutcome(String winnerPlayer) {
+    if (winnerPlayer == "X") {
+      string = PLAYER1_WIN;
+    } else if (winnerPlayer == "O") {
+      string = PLAYER2_WIN;
+    } else {
+      string = TIE_MESSAGE;
+    }
+  }
+
+  public String getReportOutcome() {
+    return string;
+  }
+
+  public String getTurn(String playerTurn) {
+    if (playerTurn.equals("X")) {
+      return "O";
+    } else {
+      return "X";
+    }
+  }
+
   public boolean validateFile(String filename) {
     File f = new File(filename);
     if (f.exists()) {
@@ -59,54 +81,27 @@ public class ConnectFour {
     return false;
   }
 
-  public String setTurn(String playerTurn) {
-    if (playerTurn.equals("X")) {
-      return "O";
-    } else {
-      return "X";
-    }
-  }
-
   public String checkWin(int i) throws FileNotFoundException {
     currentPlayer = "X";
 
-    // System.out.println("i #3: " + i);
-
     while (true) {
 
-      String winnerColor = board.checkVictory(i);
-      if (winnerColor == "X" || winnerColor == "O" || board.isFull(i)) {
-        return winnerColor;
+      String winnerPlayer = board.checkVictory(i);
+      if (winnerPlayer == "X" || winnerPlayer == "O" || board.isFull(i)) {
+        return winnerPlayer;
       }
+      final int column = text.readPlay(i);
+      board.putPiece(column, currentPlayer, i);
 
-      final int column = text.readPly(i);
-      board.put(column, currentPlayer, i);
-
-      String x = this.setTurn(currentPlayer);
+      String x = this.getTurn(currentPlayer);
       System.out.println("x is " + x);
       text.savePlayer(x);
-      // String x = game.invert();
       currentPlayer = x;
       text.printBoard();
     }
   }
-
-  public void setReportOutcome(String winnerColor) {
-    if (winnerColor == "X") {
-      string = PLAYER1_WIN;
-    } else if (winnerColor == "O") {
-      string = PLAYER2_WIN;
-    } else {
-      string = TIE_MESSAGE;
-    }
-  }
-
-  public String getReportOutcome() {
-    return string;
-  }
-
+  
   public static void main(final String[] args) throws Exception {
-    // while(true){
     ConnectFour main = new ConnectFour();
     Board board = new Board();
     main.setUser();
