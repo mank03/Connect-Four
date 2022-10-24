@@ -69,6 +69,7 @@ public class Board {
    * 
    * @param player the player piece.
    * @param i user input if load or new
+   * @return column height of pieces
    */
   public int getColumnHeight(final int x, int i) {
     int height = 0;
@@ -210,6 +211,7 @@ public class Board {
    * 
    * @param player the player piece.
    * @param i user input if load or new
+   * @return true if horizontal win found, false otherwise
    */
   public boolean checkHorizontal(final String player, int i) {
     int horizontalPatterns = getWidth() - WIN_PATTERN + 1;
@@ -238,6 +240,7 @@ public class Board {
    * 
    * @param player the player piece.
    * @param i user input if load or new
+   * @return true if vertical win found, false otherwise
    */
   public boolean checkVertical(final String player, int i) {
     int verticalPatterns = getHeight() - WIN_PATTERN + 1;
@@ -266,6 +269,7 @@ public class Board {
    * 
    * @param player the player piece.
    * @param i user input if load or new
+   * @return true if diagonal win found, false otherwise
    */
   public boolean checkDiagonal(final String player, int i) {
     int verticalPatterns = getHeight() - WIN_PATTERN + 1;
