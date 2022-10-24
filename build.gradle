@@ -16,5 +16,5 @@ dependencies {
 
 task run;
 run.doFirst {
-    println 'To run the program:\njava -cp build/classes/java/main wordanalyzer.Runner'
+    println 'To run the program:\njava -cp build/classes/java/main connectfour.ConnectFour'
 }

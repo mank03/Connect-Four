@@ -45,12 +45,12 @@ public class Board {
   }
 
   /**
-   * This method is an accessor to get the user input from the TextUI 
+   * This method is an accessor to set the user input from the TextUI 
    * class of if they want start new game or load an existing board
    *
    * @param i user input
    */
-  public void getUserInput(int i) {
+  public void setUserInput(int i) {
     user = i;
   }
 
@@ -60,7 +60,7 @@ public class Board {
    *
    * @return the user input of load or new
    */
-  public int setUserInput() {
+  public int getUserInput() {
     return user;
   }
 
@@ -129,7 +129,7 @@ public class Board {
   }
 
   /**
-   * This method checks if victory is found
+   * This method checks if board is full
    * 
    * @param i user input if load or new
    * @return either true or false if board is full

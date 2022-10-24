@@ -14,8 +14,8 @@ import java.util.Scanner;
 public class TextUI {
 
   private static final String EXIT = "Saved Successfully, See you again!";
-  private static final String PLAYER1 = "player 1: ";
-  private static final String PLAYER2 = "player2: ";
+  private static final String PLAYER1 = "Player 1: ";
+  private static final String PLAYER2 = "Player2: ";
   private Scanner scanner = new Scanner(System.in);
   private Scanner scanner2 = new Scanner(System.in);
   private Scanner scanner3 = new Scanner(System.in);
@@ -67,7 +67,7 @@ public class TextUI {
   public String askFileName() {
     while (true) {
       String userFile;
-      System.out.println("Which file would you like to read from?: ");
+      System.out.println("Which file to read from? (assets/SampleTest1.csv & assets/SampleTest2.csv is provided): ");
       userFile = scanner2.nextLine();
       if (game.validateFile(userFile)) {
         return userFile;
@@ -112,13 +112,13 @@ public class TextUI {
         final int columnIndex = column - 1;
         if (column == 0) {
           String save;
-          System.out.println("Where would you like to save your game: ");
+          System.out.println("Where would you like to save it? Enter file name and location (ex. assets/test1.csv):");
           save = scanner3.nextLine();
           board.writeData(q,save);
           System.out.println(EXIT);
           System.exit(0);
         } else if (game.checkColumn(column)) {
-          System.out.println("Column index must be at least 1.");
+          System.out.println("Please enter correct column index!");
           continue;
         } else if (board.getColumnHeight(columnIndex, i) == board.getHeight()) {
           System.out.println("Column " + column + " is " + "full.");

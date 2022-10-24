@@ -100,13 +100,13 @@ public class ConnectFour {
       text.printBoard();
     }
   }
-  
+
   public static void main(final String[] args) throws Exception {
     ConnectFour main = new ConnectFour();
     Board board = new Board();
     main.setUser();
     int i = main.getUser();
-    board.getUserInput(i);
+    board.setUserInput(i);
     text.run(i);
     System.out.println("thanks for playing!\n");
 

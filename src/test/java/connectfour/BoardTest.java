@@ -1,35 +1,18 @@
 package connectfour;
 
 import org.junit.Test;
-// import org.junit.Assert;
-// import org.junit.Before;
-
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-
+import static org.junit.Assert.assertEquals;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import static org.junit.Assert.assertEquals;
-// import static org.junit.Assert.assertTrue;
-
-// import java.io.IOException;
-// import java.nio.file.NoSuchFileException;
-
-
-/* you will need to add test methods and likely change the
-setup method as well.  The samples that are here are just so that
-you can see how junit works.
-
-Tests are run on build unless specifically excluded with -x test.
-The test results are reported in the reports subfolder of the build directory */
-
 
 public class BoardTest{
-    private Board objectToTest; //or fixture;
-    private Board testObject; //or fixture;
+    private Board objectToTest;
+    private Board testObject;
     private String[][] newBoard = new String[6][7];
     private String setUpNewBoard() throws IOException{
 
@@ -74,8 +57,8 @@ public class BoardTest{
         String[][] array = new String[lines.size()][0];
         lines.toArray(array);
 
-        for (int i = 0; i < array.length-2; i++) { //this equals to the row in our matrix.
-            for (int j = 0; j < array[i].length; j++) { //this equals to the column in each row.
+        for (int i = 0; i < array.length-2; i++) {
+            for (int j = 0; j < array[i].length; j++) {
                 if(array[i][j].equals("0")){
                     array[i][j] = ("0");  
                 }else if(array[i][j].equals("1")){
