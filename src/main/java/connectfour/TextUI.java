@@ -6,7 +6,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
- * This class is entirely responsible for interacting with the user and prints the output
+ * This class is responsible for interacting with the user and prints the output
  * 
  * @author Manu Konnur
  * 

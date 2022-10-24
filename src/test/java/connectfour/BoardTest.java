@@ -9,7 +9,12 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-
+/**
+ * This class is responsible for testing the each of the public methods in the board class
+ * 
+ * @author Manu Konnur
+ * 
+ */
 public class BoardTest{
     private Board objectToTest;
     private Board testObject;

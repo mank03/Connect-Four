@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 /**
- * This class implements the actual Connect Four board.
+ * This class is responsible for interacting with the board and checking victory.
  * 
  * @author Manu Konnur
  * 
